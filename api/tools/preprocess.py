@@ -24,6 +24,8 @@ def cleaning(data):
     df_d = df_d.dropna()
     x = df_d
     
+    print(x.shape, df_d.shape)
+    
     return x
 
 #if __name__ == "__main__":
