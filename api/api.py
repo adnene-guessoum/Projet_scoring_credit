@@ -58,7 +58,6 @@ def predict_credit(ID):
     
     data_for_prediction = data[data['ID'] == ID].iloc[:,:-1] # use 1 row of data here. Could use multiple rows if desired
     data_for_prediction_array = data_for_prediction.values.reshape(1, -1)
-    """
     
     prediction = model.predict(data_for_prediction_array)
     proba = model.predict_proba(data_for_prediction_array)
@@ -68,11 +67,10 @@ def predict_credit(ID):
         'proba' : float(proba[0][0])
         }
 
-    print('Nouvelle Prédiction : \n', dict_final)
+    print('Nouvelle Prédiction : \n', dictionnaire)
 
     return flask.jsonify(dictionnaire)
-    """
-    return f"{data.shape},{data.columns},{data_for_prediction_array.shape}"
+
 
 if __name__ == "__main__":
     # url à saisir: http://localhost:5000/ ou http://127.0.0.1:5000
