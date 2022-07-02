@@ -63,6 +63,7 @@ def predict_credit(ID):
     proba = model.predict_proba(data_for_prediction_array)
     
     dictionnaire = {
+        'individual_data' : data_for_prediction.to_json(),
         'prediction' : int(prediction),
         'proba' : float(proba[0][0])
         }
