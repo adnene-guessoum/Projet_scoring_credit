@@ -28,3 +28,8 @@ train = load_data(path_dftrain)
 liste_id = train['SK_ID_CURR'].tolist()
 
 
+st.title("Dashboard modéle de scoring - crédit")
+st.subheader("Prédictions de crédit client et comparaisons")
+st.sidebar.title("Analyse des résultats de prédiction d'offre de crédit:")
+st.markdown("Dashboard explicatif du modéle de prédiction d'attribution de crédit:")
+st.sidebar.markdown("Dashboard explicatif du modéle de prédiction d'attribution de crédit::")
