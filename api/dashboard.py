@@ -7,6 +7,9 @@ Created on Fri Jul  1 15:27:48 2022
 
 import streamlit as st
 import streamlit.components.v1 as components
+from streamlit_option_menu import option_menu
+
+
 import pandas as pd
 import numpy as np
 import plotly.express as px
@@ -46,18 +49,40 @@ train = load_data(path_dftrain)
 #test = load_data(path_dftest)
 liste_id = train['SK_ID_CURR'].tolist()
 
+'''
 #présentation du dashboard:
 st.title("Dashboard modéle de scoring - crédit")
 st.subheader("Prédictions de crédit client et comparaisons")
 st.markdown("Dashboard explicatif du modéle de prédiction d'attribution de crédit:")
-
+'''
 #menu:
+    
+with st.sidebar:
+    selected = option_menu(
+        menu_title="Navigation",
+        options = ["Comprendre nos clients",
+                   "Comprendre le modèle de score-crédit",
+                   "Prédire et expliquer le risque de défaut d'un client"])
+    
+    
+if selected == "Comprendre nos clients":
+    st.title(f"Analyse exploratoire des données clients:")
+    
+if selected == "Comprendre le modèle de score-crédit":
+    st.title(f"Analyse exploratoire des données clients:")
+    
+if selected == "Prédire et expliquer le risque de défaut d'un client":
+    st.title(f"Analyse exploratoire des données clients:")
+        
+'''
 st.sidebar.title("Analyse des résultats de prédiction d'offre de crédit:")
-st.sidebar.markdown("information sur le modèle choisie:")
-
+        st.sidebar.markdown("information sur le modèle choisie:")
 
 #choix du client:
 id_input = st.text_input('identifiant client:', )
+
+'''
+''' mise entre parenthèse de la suite:
 
 #mauvais identifiant: message d'erreur "veuillez verifier que l'identifiant saisi est correct"
 if id_input == '':
@@ -111,4 +136,4 @@ elif (int(id_input) in liste_id): #quand un identifiant correct a été saisi on
         
     st.success('Done!')
 
-    
+'''  

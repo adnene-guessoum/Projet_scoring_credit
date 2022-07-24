@@ -56,7 +56,7 @@ def predict_credit(ID):
     #ID = int(request.args.get('ID'))
     data = cleaning(train)
     
-    data_for_prediction = data[data['ID'] == ID].iloc[:,:-1] # use 1 row of data here. Could use multiple rows if desired
+    data_for_prediction = data[data['ID'] == ID].iloc[:,:-2] # use 1 row of data here. Could use multiple rows if desired
     data_for_prediction_array = data_for_prediction.values.reshape(1, -1)
     
     prediction = model.predict(data_for_prediction_array)

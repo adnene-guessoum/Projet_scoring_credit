@@ -1,0 +1,3 @@
+[submodule "strimlitbook"]
+	path = strimlitbook
+	url = https://github.com/BexTuychiev/strimlitbook.git
